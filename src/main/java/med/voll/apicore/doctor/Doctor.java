@@ -1,0 +1,82 @@
+package med.voll.apicore.doctor;
+
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import med.voll.apicore.address.Address;
+
+@Table(name = "doctors")
+@Entity(name = "Doctor")
+@Getter
+@EqualsAndHashCode(of = "id")
+public class Doctor  {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+    private String phone;
+    private String crm;
+
+    @Enumerated(EnumType.STRING)
+    private Specialty specialty;
+
+    @Embedded
+    private Address address;
+
+    public Doctor() {
+    }
+
+    public Doctor(Long id, String name, String email, String crm, Specialty specialty, Address address) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.crm = crm;
+        this.specialty = specialty;
+        this.address = address;
+    }
+
+    public Doctor(DataRegisterDoctor data) {
+        this.name = data.name();
+        this.email = data.email();
+        this.phone = data.phone();
+        this.crm = data.crm();
+        this.specialty = data.specialty();
+        this.address = new Address(data.address());
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public Specialty getSpecialty() {
+        return specialty;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+}
