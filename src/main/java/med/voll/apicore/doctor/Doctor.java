@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import med.voll.apicore.address.Address;
@@ -31,6 +32,8 @@ public class Doctor  {
     @Embedded
     private Address address;
 
+    private boolean active;
+
     public Doctor() {
     }
 
@@ -44,6 +47,7 @@ public class Doctor  {
     }
 
     public Doctor(DataRegisterDoctor data) {
+        this.active = true;
         this.name = data.name();
         this.email = data.email();
         this.phone = data.phone();
@@ -78,5 +82,21 @@ public class Doctor  {
 
     public Address getAddress() {
         return address;
+    }
+
+    public void updateInformation(@Valid DataUpdateDoctor data) {
+        if(data.name() != null){
+            this.name = data.name();
+        }
+        if(data.phone() != null){
+            this.phone = data.phone();
+        }
+        if(data.address() != null){
+            this.address.updateInformation(data.address());
+        }
+    }
+
+    public void logicalDelete() {
+        this.active = false;
     }
 }
