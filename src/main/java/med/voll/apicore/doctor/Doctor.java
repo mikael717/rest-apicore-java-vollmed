@@ -10,12 +10,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import med.voll.apicore.address.Address;
 
 @Table(name = "doctors")
 @Entity(name = "Doctor")
-@Getter
 @EqualsAndHashCode(of = "id")
 public class Doctor  {
     @Id
