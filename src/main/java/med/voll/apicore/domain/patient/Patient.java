@@ -24,6 +24,8 @@ public class Patient {
     @Embedded
     private Address address;
 
+    private boolean active;
+
     public Patient() {
     }
 
@@ -37,6 +39,7 @@ public class Patient {
     }
 
     public Patient(DataRegisterPatient data) {
+        this.active = true;
         this.name = data.name();
         this.email = data.email();
         this.phone = data.phone();
@@ -66,5 +69,21 @@ public class Patient {
 
     public Address getAddress() {
         return address;
+    }
+
+    public void updateInformation(DataUpdatePatient data){
+        if(data.name() != null){
+            this.name = data.name();
+        }
+        if(data.phone() != null){
+            this.phone = data.phone();
+        }
+        if(data.address() != null){
+            this.address.updateInformation(data.address());
+        }
+    }
+
+    public void logicalDelete() {
+        this.active = false;
     }
 }
