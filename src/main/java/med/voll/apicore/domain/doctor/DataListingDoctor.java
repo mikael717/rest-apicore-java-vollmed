@@ -1,4 +1,4 @@
-package med.voll.apicore.doctor;
+package med.voll.apicore.domain.doctor;
 
 public record DataListingDoctor(Long id, String name, String email, String crm, Specialty specialty) {
 
