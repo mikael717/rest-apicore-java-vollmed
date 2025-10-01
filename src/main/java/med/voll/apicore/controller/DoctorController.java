@@ -1,12 +1,12 @@
 package med.voll.apicore.controller;
 
 import jakarta.validation.Valid;
-import med.voll.apicore.doctor.DataDetailsDoctor;
-import med.voll.apicore.doctor.DataListingDoctor;
-import med.voll.apicore.doctor.DataRegisterDoctor;
-import med.voll.apicore.doctor.DataUpdateDoctor;
-import med.voll.apicore.doctor.Doctor;
-import med.voll.apicore.doctor.DoctorRepository;
+import med.voll.apicore.domain.doctor.DataDetailsDoctor;
+import med.voll.apicore.domain.doctor.DataListingDoctor;
+import med.voll.apicore.domain.doctor.DataRegisterDoctor;
+import med.voll.apicore.domain.doctor.DataUpdateDoctor;
+import med.voll.apicore.domain.doctor.Doctor;
+import med.voll.apicore.domain.doctor.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
