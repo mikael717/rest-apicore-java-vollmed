@@ -1,4 +1,4 @@
-package med.voll.apicore.address;
+package med.voll.apicore.domain.address;
 
 import jakarta.persistence.Embeddable;
 
