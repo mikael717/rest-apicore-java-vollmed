@@ -1,6 +1,6 @@
-package med.voll.apicore.patient;
+package med.voll.apicore.domain.patient;
 
-import med.voll.apicore.address.Address;
+import med.voll.apicore.domain.address.Address;
 
 public record DataDetailsPatient(String name, String email, String phone, String cpf, Address address) {
     public DataDetailsPatient(Patient patient){
