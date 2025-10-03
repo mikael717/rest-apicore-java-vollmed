@@ -1,11 +1,11 @@
-package med.voll.apicore.patient;
+package med.voll.apicore.domain.patient;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.voll.apicore.address.DataAddress;
+import med.voll.apicore.domain.address.DataAddress;
 
 public record DataRegisterPatient(
         @NotBlank
