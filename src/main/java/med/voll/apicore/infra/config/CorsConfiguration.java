@@ -1,4 +1,4 @@
-package med.voll.apicore.config;
+package med.voll.apicore.infra.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
