@@ -1,4 +1,4 @@
-package med.voll.apicore.patient;
+package med.voll.apicore.domain.patient;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
-import med.voll.apicore.address.Address;
+import med.voll.apicore.domain.address.Address;
 
 @Table(name = "patients")
 @Entity(name = "Patient")
