@@ -1,8 +1,8 @@
-package med.voll.apicore.patient;
+package med.voll.apicore.domain.patient;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import med.voll.apicore.address.DataAddress;
+import med.voll.apicore.domain.address.DataAddress;
 
 public record DataUpdatePatient(
         @NotNull
