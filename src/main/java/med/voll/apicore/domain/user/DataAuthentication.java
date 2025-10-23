@@ -1,0 +1,4 @@
+package med.voll.apicore.domain.user;
+
+public record DataAuthentication(String login, String password) {
+}
