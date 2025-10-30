@@ -47,7 +47,7 @@ public class ScheduleConsultation {
         return doctorRepository.chooseFreeRandomDoctorOnTheDate(data.specialty(), data.dateTime());
     }
 
-    private void cancel (DataCancellationConsultation data){
+    public void cancel (DataCancellationConsultation data){
         if(!consultationRepository.existsById(data.idConsultation())){
             throw new ValidationException("Consultation Id provided does not exist");
         }
